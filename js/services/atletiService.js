@@ -12,16 +12,16 @@ app.service('AtletiService', ['$http', 'settings', function($http, settings) {
     };
     
     var getItem = function(id,callback){
-        $http.get(url,{id:id}).then(
+        $http.get(url+'?id='+id).then(
                 callback, onError);
     };
     
     var delItem = function(id,callback){
-        $http.get(url,{act:'del',id:id}).then(
+        $http.get(url+'?act=del&id='+id).then(
                 callback, onError);
     };
 
-        var saveItem = function(item,callback){
+    var saveItem = function(item,callback){
         $http.post(url,{item:item}).then(
                 callback, onError);
     };
@@ -29,7 +29,7 @@ app.service('AtletiService', ['$http', 'settings', function($http, settings) {
     return {
         getList: getList,
         getItem: getItem,
-        delItem: getList,
-        saveItem: getList
+        delItem: delItem,
+        saveItem: saveItem
     };
 }]);

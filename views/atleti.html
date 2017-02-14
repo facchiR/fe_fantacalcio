@@ -31,8 +31,8 @@
             <td>{{item.datanascita | date}}</td>
             <td>{{item.sesso}}</td>
             <td>
-                <a class="btn btn-sm btn-info"><i class="fa fa-eye"></i> Apri</a>
-                <a class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Cancella</a>
+                <a class="btn btn-sm btn-info" ng-click="view(item.id)"><i class="fa fa-eye"></i> Apri</a>
+                <a class="btn btn-sm btn-danger"  ng-click="del(item.id)"><i class="fa fa-trash"></i> Cancella</a>
             </td>
         </tr>
     </tbody>

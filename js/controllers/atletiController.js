@@ -1,12 +1,13 @@
-app.controller('AtletiController', ['$scope', 'AtletiService', //'$routeParams',
-    function($scope, AtletiService/*, $routeParams*/) {
+app.controller('AtletiController', [ '$routeParams', '$location', '$scope', 'AtletiService',
+    function($routeParams, $location, $scope, AtletiService) {
     var vm = $scope;
     
+    vm.id = null;
     vm.item = {};
     vm.items = [];
     
     vm.loadItem = function(response){
-        vm.item = response.data && response.data.item || vm.resetItem();
+        vm.item = response.data && response.data.item;
         vm.message = response.data && response.data.message || "";
     };
     
@@ -31,17 +32,25 @@ app.controller('AtletiController', ['$scope', 'AtletiService', //'$routeParams',
     };
 
     vm.save = function(item){
-        AtletiService.seve(item,vm.loadItem);
+        AtletiService.saveItem(item,vm.loadItems);
     };
     
-    vm.delete = function(id){
+    vm.view = function(id){
+        $location.path( '/atleti/'+id );
+    };
+    
+    vm.back = function(){
+        $location.path( '/atleti' );
+    };
+    
+    vm.del = function(id){
         AtletiService.delItem(id,vm.loadItems);
     };
     
     vm.init = function(){
-        //vm.id = $routeParams && $routeParams.id || false;
+        vm.id = $routeParams && $routeParams['id'] || false;
         if(vm.id){
-            AtletiService.getItem(id,vm.loadItem);
+            AtletiService.getItem(vm.id,vm.loadItem);
         }else{
             AtletiService.getList(vm.loadItems);
         }
