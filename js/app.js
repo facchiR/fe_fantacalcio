@@ -6,13 +6,17 @@ app.config(function ($routeProvider) {
     .when('/', { 
       templateUrl: 'views/home.html' 
     })
-    .when('/atleti', { 
-      controller: 'AtletiController', 
+    .when('/calciatori', { 
+      controller: 'CalciatoriController', 
       templateUrl: 'views/atleti.html' 
     })
-    .when('/atleti/:id', { 
-      controller: 'AtletiController', 
-      templateUrl: 'views/atleta.html' 
+    .when('/squadre', { 
+      controller: 'SquadreController', 
+      templateUrl: 'views/squadre.html' 
+    }) 
+    .when('/calendari', { 
+      controller: 'CalendariController', 
+      templateUrl: 'views/calendari.html' 
     }) 
     .otherwise({ 
       redirectTo: '/' 
@@ -30,5 +34,5 @@ app.config(['$httpProvider', function($httpProvider) {
 
 app.constant("settings", {
     "ver": "1.0.0",
-    "url": "http://dev/users/c17/sport_be/",
+    "url": "../sport_be/"
 });

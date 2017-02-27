@@ -5,8 +5,14 @@ app.controller('AppController', function() {
         url:"#/",
         title:"Home"
        },{
-        url:"#/atleti",
-        title:"Atleti"
+        url:"#/calciatori",
+        title:"Calciatori"
+       },{
+        url:"#/squadre",
+        title:"Squadre"
+       },{
+        url:"#/calendari",
+        title:"Calendari"
        }
     ];
 });

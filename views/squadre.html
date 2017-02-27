@@ -1,0 +1,51 @@
+<h1>
+    Registro delle Squadre
+</h1>
+<p>
+    Questa pagina contiene l'elenco delle squadre e dovrà:
+    <ul>
+        <li>Permettere la cancellazione e creazione di un elemento</li>
+        <li>Validare la creazione solo con obbligatorierà del campo nome</li>
+        <li>Ad ogni modifica la tabella dovrà aggiornarsi</li>
+        <li>Presentare almeno un comportamento responsivo grazie ad a classi e css</li>
+    </ul>
+</p>
+<table class="table-bordered table table-responsive">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Allenatore</th>
+            <th>Denominazione</th>
+            <th>Data di Fondazione</th>
+            <th><em>Azioni</em></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in items">
+            <td>{{item.id}}</td>
+            <td>{{item.allenatore}}</td>
+            <td>{{item.denominazione}}</td>
+            <td>{{item.datafondazione | date}}</td>
+            <td>
+                <!--<a class="btn btn-sm btn-info" ng-click="view(item.id)"><i class="fa fa-eye"></i> Apri</a>-->
+                <a class="btn btn-sm btn-danger"  ng-click="del(item.id)"><i class="fa fa-trash"></i> Cancella</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<form>
+    <div class="form-group">
+        <label>Allenatore</label>
+        <input class="form-control" type="text"  ng-model="item.allenatore"/>
+    </div>
+    <div class="form-group">
+        <label>Nome della Squadra</label>
+        <input class="form-control" type="text"  ng-model="item.denominazione"/>
+    </div>
+    <div class="form-group">
+        <label>Data di Fondazione</label>
+        <input class="form-control" type="date"  ng-model="item.datafondazione"/>
+    </div>
+     <button class="btn btn-default" ng-click="save(item)">Salva</button>
+     <button class="btn btn-warning" ng-click="resetItem(item)">Annulla</button>
+</form>

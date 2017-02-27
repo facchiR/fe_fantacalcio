@@ -1,7 +1,6 @@
-app.service('AtletiService', ['$http', 'settings', function($http, settings) {
+app.service('SquadreService', ['$http', 'settings', function($http, settings) {
         
-    var url = settings.url+"atleta.php";
-    
+    var url = settings.url+"squadra.php";
     var onError = function(response){
         console.log("Errore di chiamata:", response)
     };
@@ -25,7 +24,7 @@ app.service('AtletiService', ['$http', 'settings', function($http, settings) {
         $http.post(url,{item:item}).then(
                 callback, onError);
     };
-
+         
     return {
         getList: getList,
         getItem: getItem,
