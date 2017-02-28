@@ -1,5 +1,5 @@
-app.controller('AtletiController', [ '$routeParams', '$location', '$scope', 'AtletiService',
-    function($routeParams, $location, $scope, AtletiService) {
+app.controller('CalendariController', [ '$routeParams', '$location', '$scope', 'CalendariService',
+    function($routeParams, $location, $scope, CalendariService) {
     var vm = $scope;
     
     vm.id = null;
@@ -32,7 +32,7 @@ app.controller('AtletiController', [ '$routeParams', '$location', '$scope', 'Atl
     };
 
     vm.save = function(item){
-        AtletiService.saveItem(item,vm.loadItems);
+        CalendariService.saveItem(item,vm.loadItems);
     };
     
     vm.view = function(id){
@@ -44,15 +44,15 @@ app.controller('AtletiController', [ '$routeParams', '$location', '$scope', 'Atl
     };
     
     vm.del = function(id){
-        AtletiService.delItem(id,vm.loadItems);
+        CalendariService.delItem(id,vm.loadItems);
     };
     
     vm.init = function(){
         vm.id = $routeParams && $routeParams['id'] || false;
         if(vm.id){
-            AtletiService.getItem(vm.id,vm.loadItem);
+            CalendariService.getItem(vm.id,vm.loadItem);
         }else{
-            AtletiService.getList(vm.loadItems);
+            CalendariService.getList(vm.loadItems);
         }
     };
     

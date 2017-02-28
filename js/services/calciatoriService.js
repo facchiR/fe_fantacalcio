@@ -1,6 +1,6 @@
-app.service('CalciatoreService', ['$http', 'settings', function($http, settings) {
+app.service('CalciatoriService', ['$http', 'settings', function($http, settings) {
         
-    var url = settings.url+"views/calciatore_v.php";
+    var url = settings.url+"calciatorev.php";
     
     var onError = function(response){
         console.log("Errore di chiamata:", response)

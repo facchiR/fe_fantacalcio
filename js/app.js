@@ -8,7 +8,7 @@ app.config(function ($routeProvider) {
     })
     .when('/calciatori', { 
       controller: 'CalciatoriController', 
-      templateUrl: 'views/atleti.html' 
+      templateUrl: 'views/calciatori.html' 
     })
     .when('/squadre', { 
       controller: 'SquadreController', 

@@ -2,38 +2,52 @@
     Registro degli Atleti
 </h1>
 <p>
-    Questa pagina contiene l'elenco dei tesserati e dovrà:
-    <ul>
-        <li>Permettere la cancellazione e creazione di un elemento</li>
-        <li>Validare la creazione solo con obbligatorierà del campo nome</li>
-        <li>Ad ogni modifica la tabella dovrà aggiornarsi</li>
-        <li>Presentare almeno un comportamento responsivo grazie ad a classi e css</li>
-    </ul>
+    Questa pagina contiene l'elenco delle giornate e dovrà:
+<ul>
+    <li>Permettere la cancellazione e creazione di un elemento</li>
+    <li>Validare la creazione solo con obbligatorierà del campo nome</li>
+    <li>Ad ogni modifica la tabella dovrà aggiornarsi</li>
+    <li>Presentare almeno un comportamento responsivo grazie ad a classi e css</li>
+</ul>
 </p>
 <table class="table-bordered table table-responsive">
     <thead>
         <tr>
             <th>ID</th>
+            <th>Data</th>
+            <th>Goal Casa</th>
+            <th>Goal Ospite</th>
+            <th>ID Casa</th>
+            <th>Allenatore</th>
             <th>Nome</th>
-            <th>Codice Fiscale</th>
-            <th>Telefono</th>
-            <th>Data di Nascita</th>
-            <th>Sesso</th>
-            <th><em>Azioni</em></th>
+            <th>Data di Fondazione</th>
+            <th>ID Ospite</th>
+            <th>Allenatore</th>
+            <th>Nome</th>
+            <th>Data di Fondazione</th>
+            
+
         </tr>
     </thead>
     <tbody>
         <tr ng-repeat="item in items">
             <td>{{item.id}}</td>
-            <td>{{item.nome}}</td>
-            <td>{{item.cf}}</td>
-            <td>{{item.telefono}}</td>
-            <td>{{item.datanascita | date}}</td>
-            <td>{{item.sesso}}</td>
-            <td>
+            <td>{{item.data | date}}</td>
+            <td>{{item.goal_casa}}</td>
+            <td>{{item.goal_ospite}}</td>
+            <td>{{item.squadra_id}}</td>
+            <td>{{item.allena_casa}}</td>
+            <td>{{item.nome_casa}}</td>
+            <td>{{item.data_casa | date}}</td>
+             <td>{{item.ospite_id}}</td>
+            <td>{{item.allena_ospite}}</td>
+            <td>{{item.nome_ospite}}</td>
+            <td>{{item.data_ospite | date}}</td>
+           
+            <!--<td>
                 <a class="btn btn-sm btn-info" ng-click="view(item.id)"><i class="fa fa-eye"></i> Apri</a>
                 <a class="btn btn-sm btn-danger"  ng-click="del(item.id)"><i class="fa fa-trash"></i> Cancella</a>
-            </td>
+            </td>-->
         </tr>
     </tbody>
 </table>

@@ -1,13 +1,13 @@
-app.service('SquadreService', ['$http', 'settings', function($http, settings) {
+app.service('CalendariService', ['$http', 'settings', function($http, settings) {
         
-    var url = settings.url+"squadra.php";
+    var url = settings.url+"calendariov.php";
     
     var onError = function(response){
         console.log("Errore di chiamata:", response)
     };
     
     var getList = function(callback){
-        console.info("AZA fanculo1???");
+        
         $http.get(url).then(
                 callback, onError);
     };
