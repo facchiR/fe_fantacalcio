@@ -39,7 +39,7 @@ app.controller('SquadreController', [ '$routeParams', '$location', '$scope', 'Sq
         console.log('item id:' + item.id);        
         console.info(item);
         SquadreService.saveItem(item,vm.loadItems);
-        // vm.resetItem();
+        vm.resetItem();
     };
     
 //    vm.view = function(id){
