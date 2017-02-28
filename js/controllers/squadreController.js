@@ -13,12 +13,13 @@ app.controller('SquadreController', [ '$routeParams', '$location', '$scope', 'Sq
     };
     
     vm.resetItem = function(){
-        return {
+        vm.item = {
             id:0,
             allenatore:'',
             denominazione:'',
             datafondazione: null        
         };
+        return vm.item;
     };
     
     vm.loadItems = function(response){

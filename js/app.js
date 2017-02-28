@@ -34,5 +34,5 @@ app.config(['$httpProvider', function($httpProvider) {
 
 app.constant("settings", {
     "ver": "1.0.0",
-    "url": "../sport_be/"
+    "url": "../be_fantacalcio/"
 });
